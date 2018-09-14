@@ -1,7 +1,7 @@
 # Assignment 1
 ----
 
-Build a personal website page.
+Build a personal website page. Without any framework or library
 
 - 5 html file
 
