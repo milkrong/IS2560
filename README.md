@@ -1,28 +1,33 @@
 # Assignment 1
-----
+- - - -
 
-Build a personal website page. **Without any framework or library**
+Build a personal website page. *Without any framework or library*
 
 ## Introduction
-
 5 html file:
-- Index page contains slider show
-- Resume page contains personal information
-- Gallery page contains some beautiful pictures
-- Timeline page contains excellent moment every year
-- About page contains a to-do list with progressing about this website
+* Index page contains slider show
+* Resume page contains personal information
+* Gallery page contains some beautiful pictures
+* Timeline page contains excellent moment every year
+* About page contains a to-do list with progressing about this website
 
 ## Knowledge point:
 
-- Css style nesting
-- Building slider shows and to-do list with JS
-- Style the head with "blur" attribute
+* Css style nesting
+* Building slider shows and to-do list with JS
+* Style the head with "blur" attribute
 
 ## Struggling point:
 
-- Margin and padding
-- Fixed footer in a page
+* Margin and padding
+* Fixed footer in a page
 
 ## Improvement of assignment:
 
-- More correlated links about the project. 
+* More correlated links about the project.
+
+##  Demo link:
+[Assignment 1](https://www.pitt.edu/~rol59/index.html)
+
+## Github Link
+[GitHub - milkrong/IS2560](https://github.com/milkrong/IS2560.git)
