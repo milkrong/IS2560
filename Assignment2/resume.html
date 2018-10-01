@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Assignment 1</title>
+    <title>Assignment 2</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -13,19 +13,6 @@
 
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous">
-
-    </script>
 </head>
 <body>
 <div class="container">
@@ -39,25 +26,91 @@
     </div>
 
     <!--Navigation-->
-    <nav class="navbar navbar-expand-sm justify-content-center">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-            <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
-            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-            <li class="nav-item"><a href="timeline.html" class="nav-link">Timeline</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        </ul>
-    </nav>
+    <div id="navigation">
+        <nav class="navbar navbar-expand-sm justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="timeline.html" class="nav-link">Timeline</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="smart.html" class="nav-link">Smart Page</a></li>
+            </ul>
+        </nav>
 
-    <!--Breadcrumb-->
-    <div aria-label="breadcrumb">
-        <ol class="breadcrumb bg-white">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Resume</li>
-        </ol>
+        <!--Breadcrumb-->
+        <div aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Resume</li>
+            </ol>
+        </div>
     </div>
 
-    <!--Sliders-->
+    <!--Resume-->
+    <div id="resume" class="container">
+        <div class="row justify-content-md-center">
+            <div id="resume-avatar">
+                <img src="img/pikachu.png" alt="Personal Avatar" class="img-thumbnail rounded-circle">
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="resume-header">
+                <div class="col-12">
+                    <h1><p>Rongkai Liu</p></h1>
+                </div>
+                <div class="col-12">
+                    <h3>
+                        <p>Data Scientist &amp Backend Developer</p>
+                    </h3>
+                </div>
+                <div class="col-12">
+                    <small itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span itemprop="addressLocality">Pittsburhg</span>,
+                        <span itemprop="addressRegion">PA</span>,
+                        <span itemprop="addressCountry">USA</span>
+                    </small>
+                    <p><small><span itemprop="email">milkrong121@gmail.com</span></small></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="resume-profile">
+                <div class="col-12">
+                    <h2><u>My History &amp Profile</u></h2>
+                </div>
+                <div class="col-12">
+                    <p> I'm a 24 year old engineer and developer working out of eastern Penn State. </p>
+                </div>
+                <div class="col-12">
+                    <p class="rol-12">After graduation from Shanghai University, I work as an back-end developer for an gaming inc., netease.
+                    After one year work, I decided to dive deeper into the computer science field and applied for my master
+                    program in University of Pittsburgh</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6" id="resume-skills" itemscope itemtype="http://schema.org/ItemList">
+                <h2><u>Skills</u></h2>
+                <ul>
+                    <li>HTML5</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Data Analysis</li>
+                </ul>
+            </div>
+
+            <div class="col-6" id="resume-education">
+                <h2><u>Education</u></h2>
+                <p><span itemprop="alumni">Shanghai University</span>  Graduate of 2016 Spring</p>
+                <p><span itemprop="alumni">University of Pittsburgh</span>  Graduate of 2019 Spring</p>
+            </div>
+        </div>
+    </div>
 
 </div>
 

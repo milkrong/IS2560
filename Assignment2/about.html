@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Assignment 1</title>
+    <title>Assignment 2</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -39,25 +39,80 @@
     </div>
 
     <!--Navigation-->
-    <nav class="navbar navbar-expand-sm justify-content-center">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-            <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
-            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-            <li class="nav-item"><a href="timeline.html" class="nav-link">Timeline</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        </ul>
-    </nav>
+    <div id="navigation">
+        <nav class="navbar navbar-expand-sm justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="timeline.html" class="nav-link">Timeline</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="smart.html" class="nav-link">Smart Page</a></li>
+            </ul>
+        </nav>
 
-    <!--Breadcrumb-->
-    <div aria-label="breadcrumb">
-        <ol class="breadcrumb bg-white">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Resume</li>
-        </ol>
+        <!--Breadcrumb-->
+        <div aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Resume</li>
+            </ol>
+        </div>
     </div>
 
-    <!--Sliders-->
+    <!--Checklist table-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto" id="check-list">
+                <h2 class="text-center">Check List</h2>
+                <div class="input-group">
+                    <input class="form-control" placeholder="Things To Do">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">Add</button>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Check</th>
+                            <th scope="col">Things</th>
+                            <th scope="col">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row"><input type="checkbox" value="" checked/></th>
+                        <td style="text-decoration: line-through">5 HTML5 pages</td>
+                        <td style="text-decoration: line-through">
+                            <time datetime="2018-08-23">August 23, 2018</time>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" value="" checked/></th>
+                        <td style="text-decoration: line-through">Javascript In Use</td>
+                        <td style="text-decoration: line-through">
+                            <time datetime="2018-08-23">August 23, 2018</time>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" value="" checked/></th>
+                        <td style="text-decoration: line-through">Navigation Bar</td>
+                        <td style="text-decoration: line-through">
+                            <time datetime="2018-08-23">August 23, 2018</time>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" value="" checked/></th>
+                        <td style="text-decoration: line-through">Boostrap4 In Use</td>
+                        <td style="text-decoration: line-through">
+                            <time datetime="2018-08-23">August 23, 2018</time>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
 </div>
 
@@ -67,5 +122,6 @@
     <p>&copy; Copyright 2018 </p>
 </footer>
 
+<script src="js/todo.js"></script>
 </body>
 </html>
