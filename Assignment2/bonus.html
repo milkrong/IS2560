@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+          crossorigin="anonymous">
+
+    <title>Bonus Shopping List</title>
+
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-app="Shopping" ng-controller="shoppingController">
+    <div class="row justify-content-center">
+        <div class="input-group col-8">
+            <input type="text" class="form-control" placeholder="Things to buy" ng-model="newItem.name" required>
+            <input type="text" class="form-control" placeholder="Amounts" ng-model="newItem.amount" required>
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" ng-click="addItem(newItem)">Add</button>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-middle">
+        <ul class="list-group list-group-flush col-6 shadow">
+        <li class="list-group-item" ng-repeat="item in items">
+            <span ng-class="{done: item.done}">{{item.name}}</span>
+            <span class="badge badge-primary badge-pill">{{item.amount}}</span>
+            <div class="float-right">
+                <button class="btn btn-sm btn-outline-light" ng-click="itemDone(item)" ng-hide="item.done">
+                    <i class="fas fa-check text-success"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-light" ng-click="itemUnDone(item)" ng-show="item.done">
+                    <i class="fas fa-check text-primary"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-light" ng-click="deleteItem(item)">
+                    <i class="fas fa-times text-danger"></i>
+                </button>
+            </div>
+        </li>
+    </ul>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+<script>
+    var app = angular.module('Shopping',[]);
+    app.controller('shoppingController', function ($scope) {
+        $scope.items = [
+            {
+                name: 'Banana',
+                amount: 666,
+                done: false
+            },
+            {
+                name: 'Apple',
+                amount: 666,
+                done: false
+            }
+        ];
+        
+        $scope.addItem = function (newItem) {
+            newItem.done = false;
+            if($scope.items){
+                $scope.items.unshift(newItem);
+            }
+            $scope.item = null;
+        };
+
+        $scope.itemDone = function (item) {
+            item.done = true;
+        };
+
+        $scope.itemUnDone = function (item) {
+            item.done = false;
+        };
+
+        $scope.deleteItem = function (item) {
+            var index = $scope.items.indexOf(item);
+            $scope.items.splice(index, 1);
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+</head>
+<body ng-app="Activity3">
+<div ng-controller="studentController as ctrl">
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="lead">User Registration Form </span></div>
+        <div class="form-container">
+            <form ng-submit="ctrl.submit()" name="myForm">
+                <input type="hidden" ng-model="ctrl.student.id" />
+                    <div>
+                        <label class="col-md-2 control-lable" for="user">Name</label>
+                        <div class="col-md-7">
+                            <input type="text" ng-model="ctrl.student.name" id="user"
+                                   placeholder="Enter your name" required ng-minlength="3"/>
+                            <div class="has-error" ng-show="myForm.$dirty">
+                                <span ng-show="myForm.user.$error.required">This is a required field</span>
+                                <span ng-show="myForm.user.$invalid">This field is invalid </span>
+                            </div>
+                        </div>
+                    </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <div class="col-md-7">
+                        <input type="email" ng-model="ctrl.student.email" id="email"
+                               placeholder="Enter your Email. [This field is validation free]"/>
+                        <div ng-show="myForm.$dirty">
+                            <span ng-show="myForm.email.$error.required">This is a required field</span>
+                            <span ng-show="myForm.email.$invalid">This field is invalid </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <label for="password">Password</label>
+                    <div>
+                        <input type="password" ng-model="ctrl.student.password" id="password"
+                               placeholder="Enter your Password" required/>
+                    </div>
+                </div>
+
+
+                <div>
+                    <input type="submit"  value="{{ !ctrl.student.id ? 'Add' : 'Update'}}"
+                           class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
+                    <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm"
+                            ng-disabled="myForm.$pristine">Reset Form</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><span class="lead">List of Users </span></div>
+        <div class="tablecontainer">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th width="100">
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="stu in ctrl.students">
+                    <td><span ng-bind="stu.id"></span></td>
+                    <td><span ng-bind="stu.name"></span></td>
+                    <td><span ng-bind="stu.email"></span></td>
+                    <td><span ng-bind="stu.password"></span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+e</div>
+
+
+<script>
+    angular.module('Activity3', []).
+        controller('studentController', ['$scope', function($scope) {
+        var self = this;
+        self.student = {id:null, name: null, email: '', password: ''};
+        self.id = 4;
+
+        self.students = [// In future posts, we will get it from server using service
+            {id:1, name: 'Liu', email: 'sam@abc.com', password: 'NY'},
+            {id:2, name: 'Rong', email: 'tomy@abc.com', password: 'ALBAMA'},
+            {id:3, name: 'Kai', email: 'kelly@abc.com', password: 'NEBRASKA'}
+        ];
+
+        self.submit = function () {
+            if (self.student.id === null) {
+                self.student.id = self.id++;
+                console.log('Saving New Student', self.student);
+                self.students.push(self.student);
+            } else {
+                for (var i = 0; i < self.students.length; i++) {
+                    if (self.students[i].id === self.student.id) {
+                        self.students[i] = self.student;
+                        break;
+                    }
+                }
+                console.log('Student updated with id ', self.student.id);
+            }
+            self.reset();
+        };
+
+        self.reset = function(){
+            self.student={id:null,name:'',email:'',password:''};
+            $scope.myForm.$setPristine(); //reset Form
+        }
+    }]);
+</script>
+</body>
+</html>
