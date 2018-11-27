@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo Angular</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+          crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="core.js"></script>
+
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body ng-app="Todo">
+    <div class="container" ng-controller="mainController">
+        <div class="row justify-content-center">
+            <div class="input-group col-8">
+                <input type="text" class="form-control" placeholder="Todo Things" ng-model="formData.text" required>
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" ng-click="createTodo()">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-middle">
+            <ul class="list-group list-group-flush col-6 shadow">
+            <li class="list-group-item" ng-repeat="todo in todos">
+                <span ng-class="{done: todo.done}">{{todo.text}}</span>
+                <div class="float-right">
+                    <button class="btn btn-sm btn-outline-light" ng-click="updateTodo(todo._id)">
+                        <i class="fas fa-check text-success"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-light" ng-click="deleteTodo(todo._id)">
+                        <i class="fas fa-times text-danger"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+        </div>
+    </div>
+</body>
+</html>
